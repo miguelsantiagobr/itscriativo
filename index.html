@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>ItsCriativo | Soluções de Marketing Digital e Afiliados de Alta Conversão</title>
+    <meta
+      name="description"
+      content="ItsCriativo é seu hub de soluções definitivas para o sucesso no marketing digital. Acesse guias, treinamentos e ferramentas de alta conversão para Afiliados Shopee, vendas online e crescimento de audiência."
+    />
+    <meta property="og:title" content="ItsCriativo: Seu Hub de Sucesso Digital" />
+    <meta
+      property="og:description"
+      content="Soluções de Marketing Digital e Afiliados de Alta Conversão."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://itscriativo.com.br/img/logo-social.png"
+    /> 
+    <meta property="og:url" content="https://itscriativo.com.br" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: 'Inter', Arial, sans-serif;
+        color: #1f2937; 
+        background-color: #f7f7f7;
+      }
+      
+      /* Estilo da barra superior */
+      .nav-bg {
+        background-color: #1a202c; 
+      }
+      .nav-link:hover {
+        color: #FF5722; 
+      }
+      
+      /* ============================================== */
+      /* SEÇÃO HERO */
+      /* ============================================== */
+      .hero-section {
+        /* FILTRO DEGRADE SOBRE A IMAGEM DE FUNDO */
+        /* Degradê de preto (80% opacidade) para preto (40% opacidade) */
+        background-image: linear-gradient(to top, #30cfd0eb 0%, #330867e8 100%), url(img/background.jpg); 
+        background-size: cover;
+        background-position: center;
+        
+        /* ALTURA 100VH PARA DESKTOP */
+        height: 100vh; 
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      
+      /* Estilo dos Cards de Landing Page */
+      .landing-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+      }
+      .landing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Responsividade: ALTURA MENOR PARA MOBILE (hero section) */
+      @media (max-width: 768px) {
+        .hero-section {
+          height: 60vh; 
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="nav-bg text-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="/" class="logo text-2xl font-bold text-white flex items-center">
+            <img src="img/logo-itscriativo.png" alt="Logo ItsCriativo" class="h-8 inline mr-2"/>
+          </a>
+          
+          <div class="hidden md:flex space-x-6">
+            <a href="#solucoes" class="text-gray-300 nav-link hover:text-white transition duration-200">Seu Mapa para o Sucesso</a>
+          </div>
+          
+          <button id="menu-toggle" class="md:hidden p-2 focus:outline-none">
+            <svg id="icon-menu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="mobile-menu" class="hidden md:hidden nav-bg absolute w-full shadow-xl">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-start">
+            <a href="#solucoes" class="block px-3 py-2 rounded-md text-base font-medium nav-link hover:text-white">Seu Mapa para o Sucesso</a>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+
+      menuToggle.addEventListener('click', () => {
+        const isMenuOpen = mobileMenu.classList.toggle('hidden');
+        
+        // Troca os ícones
+        iconMenu.classList.toggle('hidden', !isMenuOpen);
+        iconClose.classList.toggle('hidden', isMenuOpen);
+
+        // Se o menu for aberto (isMenuOpen é false), garante que ele feche ao clicar em um link
+        if (!isMenuOpen) {
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    iconMenu.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                }, { once: true }); // Executa apenas uma vez
+            });
+        }
+      });
+    </script>
+
+    <header class="hero-section text-white" >
+      <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+          ItsCriativo: Seu Hub para o Sucesso no Marketing Digital
+        </h1>
+        <p class="text-lg sm:text-xl opacity-90 mb-8">
+          Descubra as ferramentas, treinamentos e estratégias de alta conversão para lucrar na Shopee, Kiwify, Hotmart e em outras plataformas digitais.
+        </p>
+        <a href="#solucoes" class="bg-[#FF5722] hover:bg-[#E64D1F] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+          Descubra o Seu Caminho para o Lucro
+        </a>
+      </div>
+    </header>
+
+    <section id="solucoes" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Seu Mapa para o Sucesso no Marketing Digital
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          
+          <a href="/afiliados-shopee" class="landing-card bg-white rounded-xl shadow-lg border-t-4 border-[#FF5722] overflow-hidden">
+            <img src="img/Vendendo-com-a-Shopee.jpg" alt="Afiliados Shopee" class="w-full h-48 object-cover" /> <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 text-[#FF5722]">Afiliados Shopee: O Guia Definitivo</h3>
+                <p class="text-gray-600 mb-4">
+                    Aprenda as estratégias de viralização e vendas com vídeos prontos. O caminho mais rápido para comissões diárias no Shopee Vídeo.
+                </p>
+                <span class="text-blue-500 font-semibold flex items-center">
+                    Acessar Solução
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+            </div>
+          </a>
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 py-16">
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          Pronto para Transformar Seus Resultados?
+        </h2>
+        <p class="text-gray-300 mb-6">
+          Eleve seu desempenho como afiliado divulgando marcas que inspiram confiança e geram resultado.
+        </p>
+        <a href="#solucoes" class="bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-transparent hover:border-[#FF5722]">
+          Comece Agora
+        </a>
+      </div>
+    </section>
+    
+    <footer id="contato" class="bg-gray-900 text-gray-400 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+          <div>
+            <img src="img/logo-itscriativo.png" style="width: 150px; margin-bottom: 20px;">
+            <p class="text-sm">
+              Potencializando afiliados e empreendedores digitais com as ferramentas e estratégias mais atuais do mercado.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-4"></h3>
+            <ul class="space-y-2">
+              <li><a href="#solucoes" class="text-sm hover:text-white transition"></a></li>
+              <li><a href="/afiliados-shopee" class="text-sm hover:text-white transition"></a></li>
+              
+            </ul>
+          </div>
+          
+          
+          
+          
+        </div>
+        
+
+      </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYearFooter').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
